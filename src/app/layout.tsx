@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "@/core/ui/tokens.css";
-import { AnalyticsProvider } from "@/core/analytics";
 import { SiteNav } from "./site-nav";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -11,8 +10,8 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Helsinki place reports",
-  description: "Report and prioritise infrastructure and traffic problems in Helsinki",
+  title: "TODO: product name",
+  description: "TODO: one-line product pitch",
 };
 
 const geistSans = Geist({
@@ -35,7 +34,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AnalyticsProvider />
           <SiteNav />
           <main className="mx-auto w-full max-w-5xl p-5">{children}</main>
         </ThemeProvider>

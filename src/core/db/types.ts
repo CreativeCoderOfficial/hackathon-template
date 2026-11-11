@@ -5,43 +5,10 @@ export type Json = string | number | boolean | null | { [key: string]: Json | un
 export type Database = {
   public: {
     Tables: {
-      reports: {
-        Row: {
-          id: string;
-          user_id: string | null;
-          body: string;
-          photo_url: string | null;
-          address: string | null;
-          lat: number | null;
-          lng: number | null;
-          source: string;
-          external_id: string | null;
-          created_at: string;
-        };
-        Insert: {
-          id?: string;
-          user_id?: string | null;
-          body: string;
-          photo_url?: string | null;
-          address?: string | null;
-          lat?: number | null;
-          lng?: number | null;
-          source?: string;
-          external_id?: string | null;
-          created_at?: string;
-        };
-        Update: {
-          id?: string;
-          user_id?: string | null;
-          body?: string;
-          photo_url?: string | null;
-          address?: string | null;
-          lat?: number | null;
-          lng?: number | null;
-          source?: string;
-          external_id?: string | null;
-          created_at?: string;
-        };
+      example_items: {
+        Row: { id: string; user_id: string; title: string; created_at: string };
+        Insert: { id?: string; user_id: string; title: string; created_at?: string };
+        Update: { id?: string; user_id?: string; title?: string; created_at?: string };
         Relationships: [];
       };
     };

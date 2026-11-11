@@ -54,7 +54,6 @@ const eslintConfig = [
       "src/app/**/*.{ts,tsx}",
       "src/core/ui/**/*.{ts,tsx}",
       "src/core/auth/components/**/*.{ts,tsx}",
-      "src/core/analytics/**/*.{ts,tsx}",
     ],
     rules: restrictImports(adminImportRestriction),
   },

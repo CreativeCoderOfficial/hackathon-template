@@ -23,7 +23,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
 
   e2e:
-    # Runs only when PLAYWRIGHT_BASE_URL is set as a repository variable (Settings > Variables).
+    # Runs only when the repository variable PLAYWRIGHT_BASE_URL is set (Settings > Variables).
     if: ${{ vars.PLAYWRIGHT_BASE_URL != '' }}
     runs-on: ubuntu-latest
     env:

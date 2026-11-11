@@ -2,7 +2,7 @@
 
 TODO: one-line product pitch
 
-Seed domain: place reports for infrastructure and traffic in Helsinki. Next.js, Supabase, Tailwind, shadcn. Four people, four agents, 48 hours. This file is a router. Details live in the files it links.
+Next.js, Supabase, Tailwind, shadcn. Four people, four agents, 48 hours. This file is a router. Details live in the files it links.
 
 ## Hard rules
 
@@ -22,13 +22,13 @@ Seed domain: place reports for infrastructure and traffic in Helsinki. Next.js, 
 - No drive-by refactors.
 - New dependency: announce it in the PR title. Only one person runs installs.
 - Clarify before building, at most 3 questions. Then write assumptions into the feature's CLAUDE.md and go.
-- Demo first. The golden path (submit a report, see it in the list) must always work on the deployed URL.
+- Demo first. The golden path (see tests/e2e/golden-path.spec.ts) must always work on the deployed URL.
 
 ## Where to read
 
 | Task | Read first |
 | --- | --- |
-| Working on feature X | `src/features/X/CLAUDE.md` |
+| Working on feature X | `src/features/X/CLAUDE.md` (`src/features/example` is the reference) |
 | Touching shared stuff | `src/core/CLAUDE.md` |
 | Architecture questions | `docs/ARCHITECTURE.md` |
 | Coding rules | `docs/PRINCIPLES.md` |

@@ -21,7 +21,6 @@ Shared code used by every feature. Tiny PRs only: change one thing, open a PR, g
 | `api/client.ts` | `callEndpoint()` and `callOrMock()` (falls back to the mock on network or 5xx errors) |
 | `api/errors.ts` | `ApiError`, `unauthorized()`, `backendUnavailable()`, `notImplemented()` |
 | `ui/` | Tokens (`tokens.css`), `cn`, Button, Card, Input, Textarea, Label, Spinner, Badge, Checkbox, DropdownMenu, ThemeSwitcher |
-| `analytics/` | `track(event, props)` and `AnalyticsProvider`. No-op when `NEXT_PUBLIC_POSTHOG_KEY` is empty |
 
 ## Rules
 

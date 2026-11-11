@@ -21,9 +21,7 @@ Fill in names:
 
 | Feature | Owner | Agent worktree |
 | --- | --- | --- |
-| reports | TODO | |
-| clusters | TODO | |
-| priorities | TODO | |
+| example (delete when real features exist) | TODO | |
 
 ## Merge rhythm
 
@@ -35,7 +33,7 @@ Fill in names:
 
 ## Before the demo
 
-- Golden path works on the deployed URL: open home, submit a report, see it in the list, counter goes up.
+- Golden path works on the deployed URL: the flow in `tests/e2e/golden-path.spec.ts` passes.
 - `AUTH_MODE` is set the way the demo needs it.
 - Anonymous sign-ins are enabled in the Supabase dashboard.
 - Seed data is present so lists are not empty.

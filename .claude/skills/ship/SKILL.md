@@ -13,7 +13,7 @@ Ship the current branch as one small PR.
 3. Make sure the diff touches only your own feature, plus tiny `core` changes if needed. If it touches another feature's folder, stop and tell the user.
 4. Run `git fetch origin` and `git rebase origin/main`. If there are conflicts, stop and report them in plain words (which files, what each side changed). Do not resolve conflicts in another person's feature.
 5. If the rebase changed anything, run the checks from step 1 again.
-6. Commit with a clear message in the imperative, for example `Add report photo preview`. Use the commit attribution from the session instructions.
+6. Commit with a clear message in the imperative, for example `Add item sorting`. Use the commit attribution from the session instructions.
 7. Push with `git push -u origin HEAD`. Never use `--force`.
 8. Open the PR with `gh pr create`. Title: short and clear. If `package.json` changed, put `[new dependency: <name>]` in the title. Body: exactly 3 lines, which are what changed, why, and how to check it.
 

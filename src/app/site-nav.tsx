@@ -4,9 +4,8 @@ import { ThemeSwitcher } from "@/core/ui/theme-switcher";
 
 // One line per feature. Adding a link here is the only shared edit a new feature needs.
 const NAV_LINKS = [
-  { href: "/", label: "Reports" },
-  { href: "/clusters", label: "Clusters" },
-  { href: "/priorities", label: "Priorities" },
+  { href: "/", label: "Home" },
+  { href: "/example", label: "Example" },
 ];
 
 export function SiteNav() {

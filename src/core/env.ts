@@ -3,7 +3,6 @@ import { z } from "zod";
 const publicSchema = z.object({
   NEXT_PUBLIC_SUPABASE_URL: z.string().url().optional(),
   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: z.string().min(1).optional(),
-  NEXT_PUBLIC_POSTHOG_KEY: z.string().min(1).optional(),
 });
 
 // Each variable is read by its literal name so Next.js can inline it into client bundles.
@@ -12,7 +11,6 @@ export const publicEnv = publicSchema.parse({
   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: emptyToUndefined(
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY,
   ),
-  NEXT_PUBLIC_POSTHOG_KEY: emptyToUndefined(process.env.NEXT_PUBLIC_POSTHOG_KEY),
 });
 
 export const hasSupabaseEnv = Boolean(

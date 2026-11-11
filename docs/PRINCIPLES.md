@@ -8,7 +8,7 @@ Read this before writing or restructuring code. The original, unedited file is i
 - Build in small pieces. One component or function at a time. Never a whole feature or page in one shot.
 - Work in small runnable increments. A human smoke-tests at merge points, not after every file. Keep the app runnable after every commit.
 - End every step with how to run it: commands, env vars needed, what is mocked or skipped.
-- Demo first. The golden path (open home, submit a report, see it in the list) must always work on the deployed URL. If a change breaks it, fix that before anything else.
+- Demo first. The golden path (see `tests/e2e/golden-path.spec.ts`) must always work on the deployed URL. If a change breaks it, fix that before anything else.
 - No drive-by refactors. Touch only what your task needs. Note other problems in the PR description and leave them alone.
 
 ## 2. Code quality
@@ -55,21 +55,21 @@ function calculateTotalPrice(items: CartItem[], taxRate: number): number {
 Service layer boundary, as used in this repo:
 
 ```ts
-// src/features/reports/server/service.ts
-// The only file in the reports feature that talks to Supabase.
-export async function listReports(limit: number): Promise<Report[]> {
+// src/features/example/server/service.ts
+// The only file in the example feature that talks to Supabase.
+export async function listItems(): Promise<Item[]> {
   const db = await getDb();
-  const { data, error } = await db.from("reports").select("*").limit(limit);
+  const { data, error } = await db.from("example_items").select("*");
   if (error) throw backendUnavailable(error.message);
-  return data.map(mapRowToReport); // raw row -> typed domain object
+  return data.map(mapRowToItem); // raw row -> typed domain object
 }
 
-// src/features/reports/ui/report-list.tsx
+// src/features/example/ui/example-panel.tsx
 // Never imports a database client. It calls the feature client, which calls the endpoint.
-import { listReports } from "../client";
+import { listItems } from "../client";
 ```
 
-Swapping the database later means rewriting the body of `listReports`. The signature, the `Report` type and every component that calls it stay untouched.
+Swapping the database later means rewriting the body of `listItems`. The signature, the `Item` type and every component that calls it stay untouched.
 
 ## 4. Design tokens and consistency
 
@@ -105,7 +105,7 @@ Bad versus good:
 - Secrets, keys and tokens never appear in client-side code. The service-role key (`SUPABASE_SERVICE_ROLE_KEY`) is server only and is used only through `@/core/db/admin`, only inside a feature's `server/` folder.
 - Never prefix a secret with `NEXT_PUBLIC_`. Never commit `.env.local`.
 - Every table has RLS enabled and policies defined in the same migration file that creates it.
-- Default to privacy-preserving choices: store only what is needed, keep sensitive data server-side, and keep personal data out of logs and analytics events.
+- Default to privacy-preserving choices: store only what is needed, keep sensitive data server-side, and keep personal data out of logs.
 - Review every SQL statement before applying it. Use migrations, not ad-hoc DDL.
 
 ## 7. Budget and practicality
