@@ -8,7 +8,7 @@ Read this before writing or restructuring code. The original, unedited file is i
 - Build in small pieces. One component or function at a time. Never a whole feature or page in one shot.
 - Work in small runnable increments. A human smoke-tests at merge points, not after every file. Keep the app runnable after every commit.
 - End every step with how to run it: commands, env vars needed, what is mocked or skipped.
-- Demo first. The golden path (see `tests/e2e/golden-path.spec.ts`) must always work on the deployed URL. If a change breaks it, fix that before anything else.
+- Demo first. The golden path (defined in `docs/HACKATHON.md`) must always work on the deployed URL. If a change breaks it, fix that before anything else.
 - No drive-by refactors. Touch only what your task needs. Note other problems in the PR description and leave them alone.
 
 ## 2. Code quality

@@ -33,7 +33,7 @@ Fill in names:
 
 ## Before the demo
 
-- Golden path works on the deployed URL: the flow in `tests/e2e/golden-path.spec.ts` passes.
+- Golden path works on the deployed URL: the golden path you defined in hours 0 to 2 works by hand.
 - `AUTH_MODE` is set the way the demo needs it.
 - Anonymous sign-ins are enabled in the Supabase dashboard.
 - Seed data is present so lists are not empty.

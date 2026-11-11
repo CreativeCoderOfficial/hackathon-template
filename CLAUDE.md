@@ -22,7 +22,7 @@ Next.js, Supabase, Tailwind, shadcn. Four people, four agents, 48 hours. This fi
 - No drive-by refactors.
 - New dependency: announce it in the PR title. Only one person runs installs.
 - Clarify before building, at most 3 questions. Then write assumptions into the feature's CLAUDE.md and go.
-- Demo first. The golden path (see tests/e2e/golden-path.spec.ts) must always work on the deployed URL.
+- Demo first. The golden path (defined in docs/HACKATHON.md) must always work on the deployed URL.
 
 ## Where to read
 
@@ -39,7 +39,6 @@ Next.js, Supabase, Tailwind, shadcn. Four people, four agents, 48 hours. This fi
 
 - `npm run typecheck`, `npm run lint`, `npm run build`: all three must pass before a PR.
 - `npm run db:types`: regenerate `src/core/db/types.ts` (needs the Supabase CLI and `SUPABASE_PROJECT_ID`).
-- `npm run test:e2e`: Playwright golden path. Set `PLAYWRIGHT_BASE_URL` to test a deployed URL.
 
 ## Supabase rules
 

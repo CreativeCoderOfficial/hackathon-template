@@ -20,7 +20,7 @@ Shared code used by every feature. Tiny PRs only: change one thing, open a PR, g
 | `api/route.ts` | `handle(endpoint, run)`: zod validation, response check, uniform JSON errors |
 | `api/client.ts` | `callEndpoint()` and `callOrMock()` (falls back to the mock on network or 5xx errors) |
 | `api/errors.ts` | `ApiError`, `unauthorized()`, `backendUnavailable()`, `notImplemented()` |
-| `ui/` | Tokens (`tokens.css`), `cn`, Button, Card, Input, Textarea, Label, Spinner, Badge, Checkbox, DropdownMenu, ThemeSwitcher |
+| `ui/` | Tokens (`tokens.css`), `cn`, Button, Card, Input, Label, Spinner, DropdownMenu, ThemeSwitcher |
 
 ## Rules
 
