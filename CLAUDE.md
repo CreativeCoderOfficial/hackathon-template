@@ -33,6 +33,7 @@ Seed domain: place reports for infrastructure and traffic in Helsinki. Next.js, 
 | Architecture questions | `docs/ARCHITECTURE.md` |
 | Coding rules | `docs/PRINCIPLES.md` |
 | Timeline and merge rhythm | `docs/HACKATHON.md` |
+| Unfamiliar Next.js 16 API | `node_modules/next/dist/docs/` (see AGENTS.md) |
 
 ## Commands
 
