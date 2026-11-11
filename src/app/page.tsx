@@ -1,3 +1,5 @@
-export default function Home() {
-  return <h1 className="text-2xl font-semibold">Setup in progress</h1>;
+import { ReportsHome } from "@/features/reports/ui";
+
+export default function Page() {
+  return <ReportsHome />;
 }

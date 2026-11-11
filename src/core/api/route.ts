@@ -39,10 +39,16 @@ async function readRawInput(request: Request, method: Endpoint["method"]) {
   }
 }
 
+// Next.js uses thrown errors with a digest for prerender bail-outs and redirects. They must pass through.
+function isFrameworkSignal(error: unknown) {
+  return typeof error === "object" && error !== null && "digest" in error;
+}
+
 function toErrorResponse(error: unknown) {
   if (error instanceof ApiError) {
     return Response.json(error.toBody(), { status: error.status });
   }
+  if (isFrameworkSignal(error)) throw error;
   console.error(error);
   const internal = new ApiError(500, "internal", "Unexpected server error");
   return Response.json(internal.toBody(), { status: 500 });

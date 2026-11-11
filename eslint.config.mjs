@@ -20,7 +20,8 @@ function crossFeatureRestrictions(ownFeature) {
   return features
     .filter((other) => other !== ownFeature)
     .map((other) => ({
-      group: [`@/features/${other}`, `@/features/${other}/**`, `!@/features/${other}/contract`],
+      // Everything under the other feature, except its contract.
+      regex: `^@/features/${other}(?!/contract$)(/.*)?$`,
       message: `Features talk to each other only through contract.ts. Import @/features/${other}/contract or @/core/*.`,
     }));
 }

@@ -4,9 +4,6 @@ const publicSchema = z.object({
   NEXT_PUBLIC_SUPABASE_URL: z.string().url().optional(),
   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: z.string().min(1).optional(),
   NEXT_PUBLIC_POSTHOG_KEY: z.string().min(1).optional(),
-  NEXT_PUBLIC_MOCK_REPORTS: z.string().optional(),
-  NEXT_PUBLIC_MOCK_CLUSTERS: z.string().optional(),
-  NEXT_PUBLIC_MOCK_PRIORITIES: z.string().optional(),
 });
 
 // Each variable is read by its literal name so Next.js can inline it into client bundles.
@@ -16,9 +13,6 @@ export const publicEnv = publicSchema.parse({
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY,
   ),
   NEXT_PUBLIC_POSTHOG_KEY: emptyToUndefined(process.env.NEXT_PUBLIC_POSTHOG_KEY),
-  NEXT_PUBLIC_MOCK_REPORTS: process.env.NEXT_PUBLIC_MOCK_REPORTS,
-  NEXT_PUBLIC_MOCK_CLUSTERS: process.env.NEXT_PUBLIC_MOCK_CLUSTERS,
-  NEXT_PUBLIC_MOCK_PRIORITIES: process.env.NEXT_PUBLIC_MOCK_PRIORITIES,
 });
 
 export const hasSupabaseEnv = Boolean(
@@ -47,6 +41,8 @@ export function getServerEnv() {
   });
 }
 
+// Mock flags are not listed here. Each feature reads its own NEXT_PUBLIC_MOCK_<FEATURE> in mock.ts,
+// so adding a feature never edits this shared file.
 export function isMockEnabled(flag: string | undefined) {
   return flag === "true" || flag === "1";
 }
